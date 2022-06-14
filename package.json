@@ -1,20 +1,21 @@
 {
-  "name": "my-first-package",
-  "description": "",
+  "name": "movie_api",
   "version": "1.0.0",
-  "main": "index.js",
+  "description": "",
+  "main": "scripts.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/johndoe/my-first-package.git"
+    "url": "git+https://github.com/Cgr3/movie_api.git"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/johndoe/my-first-package/issues"
+    "url": "https://github.com/Cgr3/movie_api/issues"
   },
-  "homepage": "https://github.com/johndoe/my-first-package"
+  "homepage": "https://github.com/Cgr3/movie_api#readme"
 }
