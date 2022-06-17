@@ -153,3 +153,5 @@ Timestamp:Mon Jun 06 2022 21:42:03 GMT-0400 (Eastern Daylight Time)
 ::1 - - [17/Jun/2022:17:40:02 +0000] "GET /movies/thor HTTP/1.1" 200 - "-" "PostmanRuntime/7.29.0"
 ::1 - - [17/Jun/2022:17:40:07 +0000] "GET /movies HTTP/1.1" 200 1260 "-" "PostmanRuntime/7.29.0"
 ::1 - - [17/Jun/2022:17:40:24 +0000] "GET /movies/thor HTTP/1.1" 200 - "-" "PostmanRuntime/7.29.0"
+::1 - - [17/Jun/2022:17:44:13 +0000] "GET /movies/thor HTTP/1.1" 200 - "-" "PostmanRuntime/7.29.0"
+::1 - - [17/Jun/2022:17:44:44 +0000] "GET /movies/thor HTTP/1.1" 200 - "-" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/102.0.0.0 Safari/537.36"
