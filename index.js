@@ -1,7 +1,8 @@
 const express = require('express'),
   morgan = require('morgan'),
   fs = require('fs'),
-  path = require('path');
+  path = require('path'),
+  bodyParser = require('body-parser');
 const app = express();
 
 let topMovies = [
@@ -139,6 +140,11 @@ app.get('/topmovies', (req, res) => {
 
 app.get('/movies', (req, res) => {
   res.json(movies);
+});
+
+app.get('/movies/:name', (req, res) => {
+    res.json(movies.find((movie) =>
+  { return movie.name === req.params.name }));
 });
 
 app.get('/', (req, res) => {
