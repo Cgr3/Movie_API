@@ -145,8 +145,38 @@ app.get('/movies', (req, res) => {
 });
 
 app.get('/movies/:name', (req, res) => {
-    res.json(movies.find((movie) =>
+    res.json(movies.find((title) =>
   { return movie.name === req.params.name }));
+});
+
+app.get('/movies/:genre', (req, res) => {
+  res.json(movies.find((genre) =>
+{ return movie.genre === req.params.name }));
+});
+
+app.get('/movies/:director', (req, res) => {
+  res.json(movies.find((director) =>
+{ return movie.director === req.params.name }));
+});
+
+app.get('/users', (req, res) => {
+  res.send('Welcome to the users page!');
+});
+
+app.get('/users/:name', (req, res) => {
+  res.send('Updated information');
+});
+
+app.get('/users/:id', (req, res) => {
+  res.send('Un-registered user!');
+});
+
+app.get('/movies/fav', (req, res) => {
+  res.send('Favorite movies page!');
+});
+
+app.get('/movies/fav/:movie', (req, res) => {
+  res.send('Un-favorited movie!');
 });
 
 app.get('/', (req, res) => {
