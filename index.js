@@ -133,6 +133,19 @@ let movies = [
   },
 ];
 
+let fav = [
+  {
+  }
+];
+
+let users = [
+  {
+    username: 'CGR',
+    name: 'Carl',
+    fav: '',
+  }
+];
+
 const accessLogStream = fs.createWriteStream(path.join(__dirname, 'log.txt'), {flags: 'a'})
 app.use(morgan('combined', {stream: accessLogStream}));
 
@@ -160,7 +173,7 @@ app.get('/movies/:director', (req, res) => {
 });
 
 app.get('/users', (req, res) => {
-  res.send('Welcome to the users page!');
+  res.json(users);
 });
 
 app.get('/users/:name', (req, res) => {
@@ -171,8 +184,8 @@ app.get('/users/:id', (req, res) => {
   res.send('Un-registered user!');
 });
 
-app.get('/movies/fav', (req, res) => {
-  res.send('Favorite movies page!');
+app.get('/fav', (req, res) => {
+  res.json(fav);
 });
 
 app.get('/movies/fav/:movie', (req, res) => {
