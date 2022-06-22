@@ -187,48 +187,56 @@ let director = [
   {
     directorid: '1',
     name:'Seth Kearlsy',
+    bio: '',
     birthyear: '1971',
     deathyear: 'N/A',
   },
   {
     directorid: '2',
     name:'Kenneth Branagh',
+    bio: '',
     birthyear: '1960',
     deathyear: 'N/A',
   },
   {
     directorid: '3',
     name:'Sam Raimi',
+    bio: '',
     birthyear: '1959',
     deathyear: 'N/A',
   },
   {
     directorid: '4',
     name:'Jon Favreau',
+    bio: '',
     birthyear: '1966',
     deathyear: 'N/A',
   },
   {
     directorid: '5',
     name:'Joe Johnston',
+    bio: '',
     birthyear: '1950',
     deathyear: 'N/A',
   },
   {
     directorid: '6',
     name:'Mike Newell',
+    bio: '',
     birthyear: '1942',
     deathyear: '',
   },
   {
     directorid: '7',
     name:'David Yates',
+    bio: '',
     birthyear: '1963',
     deathyear: 'N/A',
   },
   {
     directorid: '8',
     name:'Wes Ball',
+    bio: '',
     birthyear: '1980',
     deathyear: 'N/A',
   },
@@ -243,68 +251,70 @@ let genres = [
   {
     genreid: '2',
     name: 'Action',
-    description: 'A movie with all the violence you need!',
+    description: 'An action packed adventure you need!',
   },
   {
     genreid: '3',
     name: 'Adventure',
-    description: 'A movie for those seeking the world past the horizon!',
+    description: 'A journey awaits all who seek it!',
   },
   {
     genreid: '4',
     name: 'Sci-Fi',
-    description: 'For those with extreme imaginations!',
+    description: 'A movie for those seeking the world past the horizon!',
   },
   {
     genreid: '5',
     name: 'Drama',
-    description: '',
+    description: 'An exciting, emotional or unexpected series of events!',
   },
   {
     genreid: '6',
     name: 'Fantasy',
-    description: '',
+    description: 'A sequence of improbable things!',
   },
 ];
 
 let users = [
   {
-    id: '',
+    userid: '1',
     username: 'CGR',
-    password: '',
+    password: 'test123',
     email: 'carlreynolds61@yahoo.com',
     birthday: '05/26/1999',
-    favoritemovies: '',
   },
   {
-    id: '',
+    userid: '2',
     username: 'Riah121',
-    password: '',
+    password: 'password123',
     email: 'mariah.joslyn121@gmail.com',
     birthday: '01/21/2000',
-    favoritemovies: '',
   },
   {
-    id: '',
+    userid: '3',
     username: '',
     password: '',
     email: '',
     birthday: '',
-    favoritemovies: '',
   },
 ];
 
-let fav = [
+let users_movies = [
   {
-  }
-];
-
-let users = [
+    usermovieid: '1',
+    userid: '1',
+    movieid: '1',
+  },
   {
-    username: 'CGR',
-    name: 'Carl',
-    fav: '',
-  }
+    usermovieid: '2',
+    userid: '1',
+    movieid: '2',
+  },
+  {
+    usermovieid: '3',
+    userid: '3',
+    movieid: '2',
+  },
 ];
 
 const accessLogStream = fs.createWriteStream(path.join(__dirname, 'log.txt'), {flags: 'a'})
@@ -345,11 +355,11 @@ app.get('/users/:id', (req, res) => {
   res.send('Un-registered user!');
 });
 
-app.get('/fav', (req, res) => {
+app.get('/users_movies', (req, res) => {
   res.json(fav);
 });
 
-app.get('/movies/fav/:movie', (req, res) => {
+app.get('/movies/users_movies/:movie', (req, res) => {
   res.send('Un-favorited movie!');
 });
 
