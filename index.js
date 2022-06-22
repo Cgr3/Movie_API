@@ -167,9 +167,9 @@ app.get('/movies/genre/:genre', (req, res) => {
 { return movie.genre === req.params.name }));
 });
 
-app.get('/movies/director/:**director**', (req, res) => {
+app.get('/movies/director/:director', (req, res) => {
   res.json(movies.find((movie) =>
-{ return movie.director === req.params.**director** }));
+{ return movie.director === req.params.director }));
 });
 
 app.get('/users', (req, res) => {
