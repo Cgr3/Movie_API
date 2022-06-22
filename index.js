@@ -162,14 +162,14 @@ app.get('/movies/:name', (req, res) => {
   { return movie.name === req.params.name }));
 });
 
-app.get('/movies/:genre', (req, res) => {
+app.get('/movies/genre/:genre', (req, res) => {
   res.json(movies.find((genre) =>
 { return movie.genre === req.params.name }));
 });
 
-app.get('/movies/:director', (req, res) => {
-  res.json(movies.find((director) =>
-{ return movie.director === req.params.name }));
+app.get('/movies/director/:**director**', (req, res) => {
+  res.json(movies.find((movie) =>
+{ return movie.director === req.params.**director** }));
 });
 
 app.get('/users', (req, res) => {
