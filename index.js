@@ -329,13 +329,13 @@ app.get('/movies', (req, res) => {
 });
 
 app.get('/movies/:name', (req, res) => {
-    res.json(movies.find((title) =>
-  { return movie.name === req.params.name }));
+    res.json(movies.find((movie) =>
+  { return movie.title === req.params.name }));
 });
 
 app.get('/movies/genre/:genre', (req, res) => {
   res.json(movies.find((genre) =>
-{ return movie.genre === req.params.name }));
+{ return movie.genre === req.params.genre }));
 });
 
 app.get('/movies/director/:director', (req, res) => {
@@ -351,12 +351,12 @@ app.get('/users/:name', (req, res) => {
   res.send('Updated information');
 });
 
-app.get('/users/:id', (req, res) => {
+app.get('/users/users/:id', (req, res) => {
   res.send('Un-registered user!');
 });
 
 app.get('/users_movies', (req, res) => {
-  res.json(fav);
+  res.json(users_movies);
 });
 
 app.get('/movies/users_movies/:movie', (req, res) => {
