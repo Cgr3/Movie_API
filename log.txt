@@ -236,3 +236,8 @@ Timestamp:Mon Jun 06 2022 21:42:03 GMT-0400 (Eastern Daylight Time)
 ::1 - - [22/Jun/2022:16:23:20 +0000] "GET /movies/genre HTTP/1.1" 500 16 "-" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/102.0.0.0 Safari/537.36"
 ::1 - - [22/Jun/2022:16:23:35 +0000] "GET /movies/genre/action HTTP/1.1" 500 16 "-" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/102.0.0.0 Safari/537.36"
 ::1 - - [22/Jun/2022:16:25:36 +0000] "GET /fav/ HTTP/1.1" 200 4 "-" "PostmanRuntime/7.29.0"
+::1 - - [27/Jun/2022:16:04:26 +0000] "GET /fav/ HTTP/1.1" 404 143 "-" "PostmanRuntime/7.29.0"
+::1 - - [27/Jun/2022:16:04:34 +0000] "GET /movies_users/ HTTP/1.1" 404 152 "-" "PostmanRuntime/7.29.0"
+::1 - - [27/Jun/2022:16:04:48 +0000] "GET /genre/comedy HTTP/1.1" 404 151 "-" "PostmanRuntime/7.29.0"
+::1 - - [27/Jun/2022:16:04:54 +0000] "GET /movies HTTP/1.1" 200 1702 "-" "PostmanRuntime/7.29.0"
+::1 - - [27/Jun/2022:16:05:07 +0000] "GET /users HTTP/1.1" 200 303 "-" "PostmanRuntime/7.29.0"

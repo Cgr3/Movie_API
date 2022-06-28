@@ -334,7 +334,7 @@ app.get('/movies/:name', (req, res) => {
 });
 
 app.get('/movies/genre/:genre', (req, res) => {
-  res.json(movies.find((genre) =>
+  res.json(movies.find((movie) =>
 { return movie.genre === req.params.genre }));
 });
 
