@@ -251,3 +251,8 @@ Timestamp:Mon Jun 06 2022 21:42:03 GMT-0400 (Eastern Daylight Time)
 ::1 - - [28/Jun/2022:01:57:33 +0000] "GET /documentation HTTP/1.1" 200 3447 "-" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/103.0.0.0 Safari/537.36"
 ::1 - - [28/Jun/2022:01:58:37 +0000] "GET /documentation HTTP/1.1" 200 3543 "-" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/103.0.0.0 Safari/537.36"
 ::1 - - [28/Jun/2022:01:58:53 +0000] "GET /documentation HTTP/1.1" 200 3563 "-" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/103.0.0.0 Safari/537.36"
+::1 - - [28/Jun/2022:02:05:50 +0000] "GET /users HTTP/1.1" 200 303 "-" "PostmanRuntime/7.29.0"
+::1 - - [28/Jun/2022:02:07:05 +0000] "GET /documentation HTTP/1.1" 200 3854 "-" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/103.0.0.0 Safari/537.36"
+::1 - - [28/Jun/2022:02:07:13 +0000] "GET /users HTTP/1.1" 200 303 "-" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/103.0.0.0 Safari/537.36"
+::1 - - [28/Jun/2022:02:07:39 +0000] "GET /documentation HTTP/1.1" 200 3898 "-" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/103.0.0.0 Safari/537.36"
+::1 - - [28/Jun/2022:02:07:41 +0000] "GET /documentation HTTP/1.1" 304 - "-" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/103.0.0.0 Safari/537.36"
