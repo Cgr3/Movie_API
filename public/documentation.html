@@ -63,35 +63,52 @@
         <td>Viewing My Top 10 Movies!</td>
         <td>/topmovies</td>
         <td>GET</td>
-        <td>Top 10 movies!</td>
+        <td>None</td>
         <td>JSON styled format of my top 10 movies</td>
       </tr>
       <tr>
         <td>Search for movie by name</td>
         <td>/movies/[name]</td>
         <td>GET</td>
-        <td>Specified movie by name</td>
+        <td>None</td>
         <td>JSON styled format of certain movie</td>
       </tr>
       <tr>
         <td>Return data about a genre by name</td>
         <td>/movies/genre/[genre]</td>
         <td>GET</td>
-        <td>Genre list from name</td>
+        <td>None</td>
         <td>JSON styled format of genre list</td>
       </tr>
       <tr>
         <td>Return data about director by name</td>
         <td>/movies/director/[director]</td>
         <td>GET</td>
-        <td>Director information by name</td>
+        <td>None</td>
         <td>JSON object of director information</td>
       </tr>
       <tr>
         <td>Allows new users to register</td>
         <td>/users</td>
         <td>POST</td>
-        <td>New users to register</td>
+        <td>A JSON object holding data about the student to add,
+          <br>
+        structured like:
+          <br>
+        {
+          <br>
+          userid: '12345',
+          <br>
+          username: 'cgr',
+          <br>
+          password: '****',
+          <br>
+          email: 'example@email.com',
+          <br>
+          birthday: 'happy birthday!'
+          <br>
+        }
+        </td>
         <td>JSON object holding user information</td>
       </tr>
       <tr>
