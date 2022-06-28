@@ -27,7 +27,37 @@
         <td>/movies</td>
         <td>GET</td>
         <td>Request for all movies</td>
-        <td>JSON styled format of all movies in list</td>
+        <td>JSON styled format of all movies in list
+          <br>
+        Example:
+          <br>
+          {
+          <br>
+            {
+          <br>
+        movieIDL '',
+          <br>
+        title: '',
+          <br>
+        description: '',
+          <br>
+        genre: '',
+          <br>
+        genreid: '',
+          <br>
+        director: '',
+          <br>
+        directorId: '',
+          <br>
+        imgurl: '',
+          <br>
+        featured: ''
+        <br>
+      }
+    }
+      </td>
+          <br>
+
       </tr>
       <tr>
         <td>Viewing My Top 10 Movies!</td>
@@ -80,14 +110,14 @@
       </tr>
       <tr>
         <td>Allow users to add movies to favorites</td>
-        <td>/fav</td>
+        <td>/users_movies</td>
         <td>PUT</td>
         <td>Add movies to their favorites tab</td>
         <td>JSON styled format of users favorite movies</td>
       </tr>
       <tr>
         <td>Allow users to un-favorite movies</td>
-        <td>/fav/[name]</td>
+        <td>/users_movies/[name]</td>
         <td>DELETE</td>
         <td>Remove specified movie from favorites</td>
         <td>JSON styled format of new user favorited movies</td>
