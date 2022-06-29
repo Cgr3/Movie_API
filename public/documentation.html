@@ -88,6 +88,34 @@
         <td>JSON object of director information</td>
       </tr>
       <tr>
+        <td>Allow users to update their information</td>
+        <td>/users/users/[name]</td>
+        <td>PUT</td>
+        <td>Change information of user data</td>
+        <td>Update pushing new user information</td>
+      </tr>
+      <tr>
+        <td>Allow users to add movies to favorites</td>
+        <td>/users_movies</td>
+        <td>PUT</td>
+        <td>Add movies to their favorites tab</td>
+        <td>JSON styled format of users favorite movies</td>
+      </tr>
+      <tr>
+        <td>Allow users to un-register</td>
+        <td>/users/[id]</td>
+        <td>DELETE</td>
+        <td>Remove information of user data</td>
+        <td>Deletion of user information</td>
+      </tr>
+      <tr>
+        <td>Allow users to un-favorite movies</td>
+        <td>/users_movies/[name]</td>
+        <td>DELETE</td>
+        <td>Remove specified movie from favorites</td>
+        <td>JSON styled format of new user favorited movies</td>
+      </tr>
+      <tr>
         <td>Allows new users to register</td>
         <td>/users</td>
         <td>POST</td>
@@ -110,34 +138,6 @@
         }
         </td>
         <td>JSON object holding user information</td>
-      </tr>
-      <tr>
-        <td>Allow users to update their information</td>
-        <td>/users/users/[name]</td>
-        <td>PUT</td>
-        <td>Change information of user data</td>
-        <td>Update pushing new user information</td>
-      </tr>
-      <tr>
-        <td>Allow users to un-register</td>
-        <td>/users/[id]</td>
-        <td>DELETE</td>
-        <td>Remove information of user data</td>
-        <td>Deletion of user information</td>
-      </tr>
-      <tr>
-        <td>Allow users to add movies to favorites</td>
-        <td>/users_movies</td>
-        <td>PUT</td>
-        <td>Add movies to their favorites tab</td>
-        <td>JSON styled format of users favorite movies</td>
-      </tr>
-      <tr>
-        <td>Allow users to un-favorite movies</td>
-        <td>/users_movies/[name]</td>
-        <td>DELETE</td>
-        <td>Remove specified movie from favorites</td>
-        <td>JSON styled format of new user favorited movies</td>
       </tr>
     </tbody>
   </table>
