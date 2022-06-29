@@ -47,7 +47,7 @@ let topMovies = [
   {
     title: 'Harry Potter And The Deathly Hollows Part 1',
     year: '2010',
-    genre: 'Action, Fanstay, Adventure, Childrens Film, Mystery, Adaptation & Narrative',
+    genre: 'Action, Fantasy, Adventure, Childrens Film, Mystery, Adaptation & Narrative',
     director: 'David Yates'
   },
   {
