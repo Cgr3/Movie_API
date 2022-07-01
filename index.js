@@ -343,23 +343,23 @@ app.get('/movies/director/:director', (req, res) => {
 { return movie.director === req.params.director }));
 });
 
-app.get('/users', (req, res) => {
+app.post('/users', (req, res) => {
   res.json(users);
 });
 
-app.get('/users/:name', (req, res) => {
+app.put('/users/:name', (req, res) => {
   res.send('Updated information');
 });
 
-app.get('/users/users/:id', (req, res) => {
+app.delete('/users/users/:id', (req, res) => {
   res.send('Un-registered user!');
 });
 
-app.get('/users_movies', (req, res) => {
+app.post('/users_movies', (req, res) => {
   res.json(users_movies);
 });
 
-app.get('/movies/users_movies/:movie', (req, res) => {
+app.delete('/movies/users_movies/:movie', (req, res) => {
   res.send('Un-favorited movie!');
 });
 
