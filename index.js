@@ -343,7 +343,7 @@ app.get('/movies/director/:director', (req, res) => {
 { return movie.director === req.params.director }));
 });
 
-app.post('/users', (req, res) => {
+app.get('/users', (req, res) => {
   res.json(users);
 });
 
