@@ -355,7 +355,7 @@ app.delete('/users/:id', (req, res) => {
   res.send('Un-registered user!');
 });
 
-app.post('/users_movies', (req, res) => {
+app.get('/users_movies', (req, res) => {
   res.json(users_movies);
 });
 

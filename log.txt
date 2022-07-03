@@ -286,3 +286,5 @@ Timestamp:Mon Jun 06 2022 21:42:03 GMT-0400 (Eastern Daylight Time)
 ::1 - - [03/Jul/2022:18:47:44 +0000] "GET /documentation HTTP/1.1" 200 3565 "-" "PostmanRuntime/7.29.0"
 ::1 - - [03/Jul/2022:18:48:24 +0000] "GET /users HTTP/1.1" 404 144 "-" "PostmanRuntime/7.29.0"
 ::1 - - [03/Jul/2022:18:50:25 +0000] "GET /users HTTP/1.1" 200 303 "-" "PostmanRuntime/7.29.0"
+::1 - - [03/Jul/2022:18:53:56 +0000] "GET /fav HTTP/1.1" 404 142 "-" "PostmanRuntime/7.29.0"
+::1 - - [03/Jul/2022:18:54:13 +0000] "GET /users_movies HTTP/1.1" 404 151 "-" "PostmanRuntime/7.29.0"
