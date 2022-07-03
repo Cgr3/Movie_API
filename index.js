@@ -351,7 +351,7 @@ app.put('/users/:name', (req, res) => {
   res.send('Updated information');
 });
 
-app.delete('/users/users/:id', (req, res) => {
+app.delete('/users/:id', (req, res) => {
   res.send('Un-registered user!');
 });
 
