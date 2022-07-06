@@ -333,6 +333,7 @@ app.get('/topmovies', (req, res) => {
   res.status(200).json(topMovies);
 });
 
+//Pull list of all movies
 app.get('/movies', (req, res) => {
   Movies.find()
   .then((movies) => {
@@ -344,15 +345,16 @@ app.get('/movies', (req, res) => {
   });
 });
 
+//Find movie by name
 app.get('/movies/:name', (req, res) => {
-    const { name } = req.params;
-    const movie = movie.find(movie => movie.title === name);
+  const { name } = req.params;
+  const movie = movie.find(movie => movie.title === name);
 
-    if (movie) {
-      res.status(200).json(movie);
-    } else {
-      res.status(400).send('No movie found');
-    }
+  if (movie) {
+    res.status(200).json(movie);
+  } else {
+    res.status(400).send('No movie found');
+  }
 });
 
 app.get('/movies/genre/:genre', (req, res) => {
