@@ -422,10 +422,10 @@ app.post('/users', (req, res) => {
         Email: req.body.Email,
         Birthday: req.body.Birthday
       })
-      .then((user) => {res.status(201).json(user) })
-      .catch((err) => {
-        console.log(err);
-        res.status(500).send('Error: ' + err);
+      .then((user) => { res.status(201).json(user) })
+      .catch((error) => {
+        console.error(error);
+        res.status(500).send('Error: ' + error);
       })
     }
   })

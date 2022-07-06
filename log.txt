@@ -343,3 +343,5 @@ Timestamp:Mon Jun 06 2022 21:42:03 GMT-0400 (Eastern Daylight Time)
 ::1 - - [06/Jul/2022:20:59:26 +0000] "POST /users/ HTTP/1.1" 400 23 "-" "PostmanRuntime/7.29.0"
 ::1 - - [06/Jul/2022:20:59:31 +0000] "GET /users/ HTTP/1.1" 201 774 "-" "PostmanRuntime/7.29.0"
 ::1 - - [06/Jul/2022:20:59:42 +0000] "POST /users/ HTTP/1.1" 400 23 "-" "PostmanRuntime/7.29.0"
+::1 - - [06/Jul/2022:21:00:56 +0000] "POST /users/ HTTP/1.1" 400 23 "-" "PostmanRuntime/7.29.0"
+::1 - - [06/Jul/2022:21:01:03 +0000] "POST /users/ HTTP/1.1" 400 23 "-" "PostmanRuntime/7.29.0"
