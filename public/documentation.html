@@ -82,14 +82,14 @@
       </tr>
       <tr>
         <td>Allow users to update their information</td>
-        <td>/users/users/[name]</td>
+        <td>/users/[Username]</td>
         <td>PUT</td>
         <td>None</td>
         <td>Update pushing new user information</td>
       </tr>
       <tr>
         <td>Allow users to un-register</td>
-        <td>/users/[id]</td>
+        <td>/users/[Username]</td>
         <td>DELETE</td>
         <td>None</td>
         <td>Deletion of user information</td>
@@ -127,7 +127,7 @@
       </tr>
       <tr>
         <td>Allow users to add movies to favorites</td>
-        <td>/users_movies</td>
+        <td>/users/[Username]/movies/[MovieID]</td>
         <td>POST</td>
         <td>None</td>
         <td>JSON styled format of users favorite movies</td>
