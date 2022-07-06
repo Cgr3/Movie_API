@@ -423,9 +423,9 @@ app.post('/users', (req, res) => {
         Birthday: req.body.Birthday
       })
       .then((user) => {res.status(201).json(user) })
-      .catch((error) => {
-        console.log(error);
-        res.status(500).send('Error: ' + error);
+      .catch((err) => {
+        console.log(err);
+        res.status(500).send('Error: ' + err);
       })
     }
   })
