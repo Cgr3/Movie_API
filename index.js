@@ -347,14 +347,14 @@ app.get('/movies', (req, res) => {
 
 //Find movie by name
 app.get('/movies/:name', (req, res) => {
-  const { name } = req.params;
-  const movie = movie.find(movie => movie.title === name);
-
-  if (movie) {
-    res.status(200).json(movie);
-  } else {
-    res.status(400).send('No movie found');
-  }
+  movies.findOne({ movie: req.param.Title })
+  .then((movie) => {
+    res.json(movie);
+  })
+  .catch((err) => {
+    console.log(err);
+    res.status(500).send('Error: ' + err);
+  });
 });
 
 app.get('/movies/genre/:genre', (req, res) => {
