@@ -321,54 +321,72 @@ const accessLogStream = fs.createWriteStream(path.join(__dirname, 'log.txt'), {f
 app.use(morgan('combined', {stream: accessLogStream}));
 
 app.get('/topmovies', (req, res) => {
-  res.json(topMovies);
+  res.status(200).json(topMovies);
 });
 
 app.get('/movies', (req, res) => {
-  res.json(movies);
+  res.status(200).json(movies);
 });
 
 app.get('/movies/:name', (req, res) => {
-    res.json(movies.find((movie) =>
-  { return movie.title === req.params.name }));
+    const { name } = req.params;
+    const movie = movie.find(movie => movie.title === name);
+
+    if (movie) {
+      res.status(200).json(movie);
+    } else {
+      res.status(400).send('No movie found');
+    }
 });
 
 app.get('/movies/genre/:genre', (req, res) => {
-  res.json(movies.find((movie) =>
-{ return movie.genre === req.params.genre }));
+  const { name } = req.params.genre;
+  const genre = movie.find(movie => genre.name === name);
+
+  if (genre) {
+    res.status(200).json(movie);
+  } else {
+    res.status(400).send('No movie found');
+  }
 });
 
 app.get('/movies/director/:director', (req, res) => {
-  res.json(movies.find((movie) =>
-{ return movie.director === req.params.director }));
+  const { name } = req.params.director;
+  const director = movie.find(movie => director.name === name);
+
+  if (director) {
+    res.status(200).json(movie);
+  } else {
+    res.status(400).send('No movie found');
+  }
 });
 
 app.get('/users', (req, res) => {
-  res.json(users);
+  res.status(200).json(users);
 });
 
 app.put('/users/:name', (req, res) => {
-  res.send('Updated information');
+  res.status(200).send('Updated information');
 });
 
 app.delete('/users/:id', (req, res) => {
-  res.send('Un-registered user!');
+  res.status(200).send('Un-registered user!');
 });
 
 app.get('/users_movies', (req, res) => {
-  res.json(users_movies);
+  res.status(200).json(users_movies);
 });
 
 app.delete('/movies/users_movies/:movie', (req, res) => {
-  res.send('Un-favorited movie!');
+  res.status(200).send('Un-favorited movie!');
 });
 
 app.get('/', (req, res) => {
-  res.send('Welcome To My MoviesFlix Page!');
+  res.status(200).send('Welcome To My MoviesFlix Page!');
 });
 
 app.get('/documentation', (req, res) => {
-  res.sendFile('public/documentation.html', { root: __dirname });
+  res.status(200).sendFile('public/documentation.html', { root: __dirname });
 });
 
 app.use((err, req, res, next) => {
