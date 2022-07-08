@@ -287,7 +287,7 @@ app.get('/movies', (req, res) => {
 
 //Find movie by name
 app.get('/movies/:Title', (req, res) => {
-  movies.findOne({ Title: req.param.Title })
+  Movies.findOne({ Title: req.param.Title })
   .then((movie) => {
     res.json(movie);
   })
