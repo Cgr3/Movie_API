@@ -357,3 +357,6 @@ Timestamp:Mon Jun 06 2022 21:42:03 GMT-0400 (Eastern Daylight Time)
 ::1 - - [06/Jul/2022:21:07:29 +0000] "GET /users/cgr HTTP/1.1" 200 4 "-" "PostmanRuntime/7.29.0"
 ::1 - - [06/Jul/2022:21:07:36 +0000] "GET /movies/thor HTTP/1.1" 500 16 "-" "PostmanRuntime/7.29.0"
 ::1 - - [06/Jul/2022:21:07:57 +0000] "GET /movies/Thor HTTP/1.1" 500 16 "-" "PostmanRuntime/7.29.0"
+::1 - - [06/Jul/2022:21:23:54 +0000] "POST /users HTTP/1.1" 400 23 "-" "PostmanRuntime/7.29.0"
+::1 - - [06/Jul/2022:21:24:01 +0000] "POST /users HTTP/1.1" 400 23 "-" "PostmanRuntime/7.29.0"
+::1 - - [06/Jul/2022:21:24:07 +0000] "POST /users HTTP/1.1" 400 23 "-" "PostmanRuntime/7.29.0"

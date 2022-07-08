@@ -16,69 +16,6 @@ const app = express();
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }))
 
-let topMovies = [
-  {
-    title: '8 Crazy Nights',
-    year: '2002',
-    genre: 'Comedy, Adult Animation, Musical, Animation',
-    director: 'Seth Kearlsy',
-  },
-  {
-    title: 'Thor',
-    year: '2011',
-    genre: 'Action, Superhero, Sci-Fi, Fantasy & Adventure',
-    director: 'Kenneth Branagh',
-  },
-  {
-    title: 'Spider Man',
-    year: '2002',
-    genre: 'Action, Adventure & Sci-Fi',
-    director: 'Sam Raimi',
-  },
-  {
-    title: 'Iron Man',
-    year: '2008',
-    genre: 'Action, Adventure & Sci-Fi',
-    director: 'Jon Favreau'
-  },
-  {
-    title: 'Captain America: The First Avenger',
-    year: '2011',
-    genre: 'Action, War, Adventure, Superhero, Sci-Fi & Thriller',
-    director: 'Joe Johnston'
-  },
-  {
-    title: 'Harry Potter And The Goblet Of Fire',
-    year: '2005',
-    genre: 'Fantasy, Adventure, Childrens Film, Thriller & Mystery',
-    director: 'Mike Newell'
-  },
-  {
-    title: 'Harry Potter And The Deathly Hollows Part 1',
-    year: '2010',
-    genre: 'Action, Fantasy, Adventure, Childrens Film, Mystery, Adaptation & Narrative',
-    director: 'David Yates'
-  },
-  {
-    title: 'Harry Potter And The Deathly Hollows Part 2',
-    year: '2011',
-    genre: 'Drama, Fantasy, Adventure, Mystery & Narrative',
-    director: 'David Yates'
-  },
-  {
-    title: 'The Maze Runner',
-    year: '2014',
-    genre: 'Sci-Fi & Action',
-    director: 'Wes Ball'
-  },
-  {
-    title: 'Maze Runner: The Death Cure',
-    year: '2018',
-    genre: 'Sci-Fi & Action',
-    director: 'Wes Ball'
-  },
-];
-
 let movies = [
   {
     movieid: '1',
@@ -291,6 +228,7 @@ let users = [
     password: 'test123',
     email: '123email@email.com',
     birthday: '01/04/2001',
+    favoriteMovies: ['Thor', 'Iron Man', 'The Maze Runner'],
   },
   {
     userid: '2',
@@ -298,6 +236,7 @@ let users = [
     password: 'password123',
     email: 'exampleemail@email.com',
     birthday: '01/17/2000',
+    favoriteMovies: ['The Maze Runner', 'Thor', 'Harry Potter and the Goblet of Fire'],
   },
   {
     userid: '3',
@@ -305,6 +244,7 @@ let users = [
     password: '123pass',
     email: 'emailexample@email.com',
     birthday: '06/05/2005',
+    favoriteMovies: ['Iron Man', 'Harry Potter and the Deathly Hollows Part 2', 'Spider Man'],
   },
 ];
 
@@ -359,7 +299,7 @@ app.get('/movies/:name', (req, res) => {
 
 app.get('/movies/genre/:genre', (req, res) => {
   const { name } = req.params.genre;
-  const genre = movie.find(movie => genre.name === name);
+  const genre = genre.find(movie => genre.name === name);
 
   if (genre) {
     res.status(200).json(movie);
@@ -370,7 +310,7 @@ app.get('/movies/genre/:genre', (req, res) => {
 
 app.get('/movies/director/:director', (req, res) => {
   const { name } = req.params.director;
-  const director = movie.find(movie => director.name === name);
+  const director = director.find(movie => director.name === name);
 
   if (director) {
     res.status(200).json(movie);
@@ -491,7 +431,7 @@ app.get('/users_movies', (req, res) => {
 });
 
 //Add a movie to user's list of favorites
-app.post('/users/:Username/movies/:MovieID', (req, res) => {
+app.post('/users/:UserID/:MovieID', (req, res) => {
   Users.findOneAndUpdate({ Username: req.params.Username }, {
     $push: { FavoriteMovies: req.params.MovieID }
   },
@@ -507,7 +447,7 @@ app.post('/users/:Username/movies/:MovieID', (req, res) => {
 });
 
 //Remove favorited movies
-app.delete('/movies/:Username/:movies/:MovieID', (req, res) => {
+app.delete('/movies/:UserID/:MovieID', (req, res) => {
   Movies.findOneAndRemove({ Movies: req.params.movies })
     .then((movie) => {
       if(!movies) {
