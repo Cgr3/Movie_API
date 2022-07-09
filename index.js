@@ -310,7 +310,7 @@ app.get('/movies/genre/:genre', (req, res) => {
 
 app.get('/movies/director/:director', (req, res) => {
   const { director } = req.params.director;
-  const director = movies.find(movie => movie.director.name === name);
+  const director = movies.find(movie => director.name === name);
 
   if (director) {
     res.status(200).json(director);
