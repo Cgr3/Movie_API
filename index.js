@@ -298,8 +298,8 @@ app.get('/movies/:Title', (req, res) => {
 });
 
 app.get('/movies/genre/:genre', (req, res) => {
-  const { genre } = req.params.genre;
-  const genre = movies.find(movie => movie.genre.name === name);
+  const { genreName } = req.params.genre;
+  const genre = movies.find(genre => genres.name === genreName);
 
   if (genre) {
     res.status(200).json(genre);
@@ -309,8 +309,8 @@ app.get('/movies/genre/:genre', (req, res) => {
 });
 
 app.get('/movies/director/:director', (req, res) => {
-  const { director } = req.params.director;
-  const director = movies.find(movie => director.name === name);
+  const { directorName } = req.params.director;
+  const director = movies.find(director => director.name === directorName);
 
   if (director) {
     res.status(200).json(director);

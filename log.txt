@@ -436,3 +436,7 @@ Timestamp:Mon Jun 06 2022 21:42:03 GMT-0400 (Eastern Daylight Time)
 ::1 - - [09/Jul/2022:17:05:19 +0000] "GET /movies HTTP/1.1" 201 6297 "-" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/103.0.0.0 Safari/537.36"
 ::1 - - [09/Jul/2022:17:05:25 +0000] "GET /movies/genre/thriller HTTP/1.1" 500 16 "-" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/103.0.0.0 Safari/537.36"
 ::1 - - [09/Jul/2022:17:05:38 +0000] "GET /movies/genre/Thriller HTTP/1.1" 500 16 "-" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/103.0.0.0 Safari/537.36"
+::1 - - [09/Jul/2022:17:10:15 +0000] "GET /movies/genre/Thriller HTTP/1.1" 200 198 "-" "PostmanRuntime/7.29.0"
+::1 - - [09/Jul/2022:17:10:23 +0000] "GET /movies/genre/comedy HTTP/1.1" 200 198 "-" "PostmanRuntime/7.29.0"
+::1 - - [09/Jul/2022:17:11:03 +0000] "GET /movies/director/David%20Yates HTTP/1.1" 200 198 "-" "PostmanRuntime/7.29.0"
+::1 - - [09/Jul/2022:17:11:11 +0000] "GET /movies/ HTTP/1.1" 201 6297 "-" "PostmanRuntime/7.29.0"
