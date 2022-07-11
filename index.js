@@ -18,7 +18,7 @@ app.use(bodyParser.urlencoded({ extended: true }))
 
 let movies = [
   {
-    Movieid: '1',
+    MovieID: '1',
     Title: '8 Crazy Nights',
     Description: 'An Adam Sandler animated chanukah musical',
     Genre: 'Comedy',
@@ -29,7 +29,7 @@ let movies = [
     Featured: '',
   },
   {
-    Movieid: '2',
+    MovieID: '2',
     Title: 'Thor',
     Description: '',
     Genre: 'Action',
@@ -40,7 +40,7 @@ let movies = [
     Featured: '',
   },
   {
-    Movieid: '3',
+    MovieID: '3',
     Title: 'Spider Man',
     Description: '',
     Genre: 'Action',
@@ -51,7 +51,7 @@ let movies = [
     Featured: '',
   },
   {
-    Movieid: '4',
+    MovieID: '4',
     Title: 'Iron Man',
     Description: '',
     Genre: 'Action',
@@ -62,7 +62,7 @@ let movies = [
     Featured: '',
   },
   {
-    Movieid: '5',
+    MovieID: '5',
     Title: 'Captain America: The First Avenger',
     Description: '',
     Genre: 'Action',
@@ -73,7 +73,7 @@ let movies = [
     Featured: '',
   },
   {
-    Movieid: '6',
+    MovieID: '6',
     Title: 'Harry Potter And The Goblet Of Fire',
     Description: '',
     Genre: 'Fantasy',
@@ -84,7 +84,7 @@ let movies = [
     Featured: '',
   },
   {
-    Movieid: '7',
+    MovieID: '7',
     Title: 'Harry Potter And The Deathly Hollows Part 1',
     Description: '',
     Genre: 'Adventure',
@@ -95,7 +95,7 @@ let movies = [
     Featured: '',
   },
   {
-    Movieid: '8',
+    MovieID: '8',
     Title: 'Harry Potter And The Deathly Hollows Part 2',
     Description: '',
     Genre: 'Drama',
@@ -106,7 +106,7 @@ let movies = [
     Featured: '',
   },
   {
-    Movieid: '9',
+    MovieID: '9',
     Title: 'The Maze Runner',
     Dscription: '',
     Genre: 'Sci-Fi',
@@ -117,7 +117,7 @@ let movies = [
     Featured: '',
   },
   {
-    Movieid: '10',
+    MovieID: '10',
     Title: 'Maze Runner: The Death Cure',
     Description: '',
     Genre: 'Sci-Fi',
@@ -431,7 +431,7 @@ app.get('/users_movies', (req, res) => {
 });
 
 //Add a movie to user's list of favorites
-app.post('/users/:UserID/:MovieID', (req, res) => {
+app.post('/movies/:UserID/:MovieID', (req, res) => {
   Users.findOneAndUpdate({ Username: req.params.Username }, {
     $push: { FavoriteMovies: req.params.MovieID }
   },
