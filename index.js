@@ -297,14 +297,14 @@ app.get('/movies/:title', (req, res) => {
   });
 });
 
-app.get('/movies/genre/:genreName', (req, res) => {
+app.get('/genres/:genreName', (req, res) => {
   const { genreName } = req.params;
-  const genre = genres.find(genre => genres.name === genreName).description;
+  const genre = genres.find( genre => genre.name === genreName).description;
 
   if (genre) {
     res.status(200).json(genre);
   } else {
-    res.status(400).send('No genre found');
+    res.status(400).send('No genre found')
   }
 });
 
