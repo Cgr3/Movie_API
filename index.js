@@ -308,7 +308,7 @@ app.get('/genres/:genreName', (req, res) => {
   }
 });
 
-app.get('/movies/director/:directorName', (req, res) => {
+app.get('/director/:directorName', (req, res) => {
   const { directorName } = req.params;
   const directorData = director.find(director => director.name === directorName);
 
