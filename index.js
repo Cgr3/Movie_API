@@ -396,15 +396,16 @@ app.post('/movies/:UserID/:MovieID', (req, res) => {
 
 //Remove favorited movies
 app.delete('/movies/:Username/movies/:MovieID', (req, res) => {
-  Movies.findOneAndUpdate({ Movie: req.params.movie }, {
-    $pull: { FavoriteMovies: req.params.MovieID }
+  Users.findOneAndUpdate({ Username: req.params.Username }, {
+    $pull: { FavoriteMovies: req.params.MovieID },
   },
     { new: true }, //Makes sure that the updated document is returned
-    (err, updatedMovie) => {
+    (err, updatedUser) => {
     if(err) {
-      res.status(400).send(req.params.Movie + ' was not found');
+      console.log(err);
+      res.status(500).send('Error: ' + err);
     } else {
-      res.status(200).send(req.params.Movie + ' was removed');
+      res.json(updatedUser);
     }
   });
 });
