@@ -24,7 +24,7 @@ let movies = [
     'Director': {
       'Name': 'Seth Kearlsy',
       'Bio:': 'An American director and producer known for The Secret of Pets (2016) and The Looney Tunes Show(2011)',
-      'Birth': '1971'
+      'Birth': 1971
     },
     'Genre': {
       'Name': 'Comedy',
@@ -39,7 +39,7 @@ let movies = [
     'Director': {
       'Name': 'Kenneth Branagh',
       'Bio': 'A British actor, director and producer most known for his film adaptations of William Shakespeare',
-      'Birth': '1960'
+      'Birth': 1960
     },
     'Genre': {
       'Name': 'Action',
@@ -54,7 +54,7 @@ let movies = [
     'Director': {
       'Name': 'Sam Raimi',
       'Bio': 'An american director, producer, writer and actor who is most known for directing the Spider-Man trilogy as well as the Evil Dead franchise',
-      'Birth': '1959'
+      'Birth': 1959
    },
     'Genre': {
       'Name': 'Action',
@@ -69,7 +69,7 @@ let movies = [
     'Director': {
       'Name': 'Jon Favreau',
       'Bio': 'An American writer, producer and actor who is most known for creating The Mandalorian as well as The Book of Boba Fett',
-      'Birth': '1966'
+      'Birth': 1966
     },
     'Genre': {
       'Name': 'Action',
@@ -84,7 +84,7 @@ let movies = [
     'Director': {
       'Name': 'Joe Johnston',
       'Description': 'An American director most known for Jumanji, Honey, I Shrunk the Kids and Captain America: The First Avenger',
-      'Birth': '1950'
+      'Birth': 1950
     },
     'Genre': {
       'Name' :'Action',
@@ -103,7 +103,7 @@ let movies = [
     'Director': {
       'Name': 'Mike Newell',
       'Bio': 'An English film/tv director and producer who won the BAFTA for Best Direction for Four Weddings and a Funeral in 1994',
-      'Birth': '1942'
+      'Birth': 1942
     },
     'Imgurl': 'harrypottergobletoffire.png',
     'Featured': true
@@ -114,7 +114,7 @@ let movies = [
     'Director': {
       'Name': 'David Yates',
       'Bio': 'An English director, producer and writer most known for directing the later four Harry Potter movies as well as the first three Fantastic Beasts',
-      'Birth': '1963'
+      'Birth': 1963
     },
     'Genre': {
       'Name': 'Adventure',
@@ -129,7 +129,7 @@ let movies = [
     'Director': {
       'Name': 'David Yates',
       'Bio': 'An English director, producer and writer most known for directing the later four Harry Potter movies as well as the first three Fantastic Beasts',
-      'Birth': '1963'
+      'Birth': 1963
     },
     'Genre': {
       'Name': 'Drama',
@@ -140,11 +140,11 @@ let movies = [
   },
   {
     'Title': 'The Maze Runner',
-    'Dscription': '',
+    'Dscription': 'Thomas awakens in a community of boys who have all lost their memories, they soon learn they are trapped in a maze with only one goal. Escape.',
     'Director': {
       'Name': 'Wes Ball',
-      'Bio': '',
-      'Birth': '1980'
+      'Bio': 'An American film director, visual effects artist and graphic artist most known for directing The Maze Runner',
+      'Birth': 1980
     },
     'Genre': {
       'Name': 'Sci-Fi',
@@ -155,11 +155,11 @@ let movies = [
   },
   {
     'Title': 'Maze Runner: The Death Cure',
-    'Description': '',
+    'Description': 'Thomas embarks on a mission to find a cure for the deadly disease The Flare',
     'Director': {
       'Name': 'Wes Ball',
-      'Bio': '',
-      'Birth': '1980'
+      'Bio': 'An American film director, visual effects artist and graphic artist most known for directing The Maze Runner',
+      'Birth': 1980
     },
     'Genre': {
       'Name': 'Sci-Fi',
@@ -246,9 +246,10 @@ app.get('/movies/:Title', (req, res) => {
   });
 });
 
-app.get('/genres/:genreName', (req, res) => {
+//Get Genre by name
+app.get('movies/genre/:genreName', (req, res) => {
   const { genreName } = req.params;
-  const genre = genres.find( genre => genre.name.toLowerCase() === genreName.toLowerCase()).description;
+  const genre = movies.find( movie => movie.Genre.Name === genreName ).Genre;
 
   if (genre) {
     res.status(200).json(genre);
@@ -257,9 +258,10 @@ app.get('/genres/:genreName', (req, res) => {
   }
 });
 
-app.get('/director/:directorName', (req, res) => {
+//Get director by name
+app.get('movies/director/:directorName', (req, res) => {
   const { directorName } = req.params;
-  const directorData = director.find(director => director.name === directorName);
+  const directorData = movie.find(movie => movie.Director.Name.toLowerCase() === directorName.toLowerCase()).Director;
 
   if (directorData) {
     res.status(200).json(directorData);
