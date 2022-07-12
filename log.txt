@@ -585,3 +585,4 @@ Timestamp:Mon Jun 06 2022 21:42:03 GMT-0400 (Eastern Daylight Time)
 ::1 - - [11/Jul/2022:01:42:15 +0000] "GET /movies/Spider-Man HTTP/1.1" 200 581 "-" "PostmanRuntime/7.29.0"
 ::1 - - [11/Jul/2022:01:42:24 +0000] "GET /movies/Spider-Man HTTP/1.1" 200 565 "-" "PostmanRuntime/7.29.0"
 ::1 - - [11/Jul/2022:01:42:28 +0000] "GET /movies/Thor HTTP/1.1" 200 581 "-" "PostmanRuntime/7.29.0"
+::1 - - [11/Jul/2022:22:56:45 +0000] "GET /genres/comedy HTTP/1.1" 200 28 "-" "PostmanRuntime/7.29.0"

@@ -18,206 +18,154 @@ app.use(bodyParser.urlencoded({ extended: true }))
 
 let movies = [
   {
-    MovieID: '1',
-    Title: '8 Crazy Nights',
-    Description: 'An Adam Sandler animated chanukah musical',
-    Genre: 'Comedy',
-    Genreid: '1',
-    Director: 'Seth Kearlsy',
-    Directorid: '1',
-    Imgurl: '',
-    Featured: '',
+    'Title': 'Eight Crazy Nights',
+    'Description': 'An Adam Sandler animated chanukah musical',
+    'Director': {
+      'Name': 'Seth Kearlsy',
+      'Bio:': 'An American director and producer known for The Secret of Pets (2016) and The Looney Tunes Show(2011)',
+      'Birth': '1971'
+    },
+    'Genre': {
+      'Name': 'Comedy',
+      'Description': 'A movie to make you laugh!'
+    },
+      'Imgurl': 'eightcrazynights.png',
+      'Featured': true
+    },
+  {
+    'Title': 'Thor',
+    'Description': 'The powerful god Thor is stripped of his title and powers and sent to Earth',
+    'Director': {
+      'Name': 'Kenneth Branagh',
+      'Bio': 'A British actor, director and producer most known for his film adaptations of William Shakespeare',
+      'Birth': '1960'
+    },
+    'Genre': {
+      'Name': 'Action',
+      'Description': 'An action packed adventure you need!'
+    },
+    'Imgurl': 'thor.png',
+    'Featured': true
   },
   {
-    MovieID: '2',
-    Title: 'Thor',
-    Description: '',
-    Genre: 'Action',
-    Genreid: '2',
-    Director: 'Kenneth Branagh',
-    Directorid: '2',
-    Imgurl: '',
-    Featured: '',
+    'Title': 'Spider Man',
+    'Description': 'A high school nerd gains spider-like abilities and must use those powers to fight evil after a tragedy befalls his family',
+    'Director': {
+      'Name': 'Sam Raimi',
+      'Bio': 'An american director, producer, writer and actor who is most known for directing the Spider-Man trilogy as well as the Evil Dead franchise',
+      'Birth': '1959'
+   },
+    'Genre': {
+      'Name': 'Action',
+      'Description': 'An action packed adventure you need!'
+    },
+    'Imgurl': 'spiderman.png',
+    'Featured': true
   },
   {
-    MovieID: '3',
-    Title: 'Spider Man',
-    Description: '',
-    Genre: 'Action',
-    Genreid: '2',
-    Director: 'Sam Raimi',
-    Directorid: '3',
-    Imgurl: '',
-    Featured: '',
+    'Title': 'Iron Man',
+    'Description': 'After being held captive in an Afghan cave, billionare engineer Tony Stark creates a weaponized super suit to fight evil',
+    'Director': {
+      'Name': 'Jon Favreau',
+      'Bio': 'An American writer, producer and actor who is most known for creating The Mandalorian as well as The Book of Boba Fett',
+      'Birth': '1966'
+    },
+    'Genre': {
+      'Name': 'Action',
+      'Description': 'An action packed adventure you need!'
+    },
+    'Imgurl': 'ironman.png',
+    'Featured': true
   },
   {
-    MovieID: '4',
-    Title: 'Iron Man',
-    Description: '',
-    Genre: 'Action',
-    Genreid: '2',
-    Director: 'Jon Favreau',
-    Directorid: '4',
-    Imgurl: '',
-    Featured: '',
+    'Title': 'Captain America: The First Avenger',
+    'Description': 'Steve Rogers receives the super-soldier serum and becomes America\'s first ever Avenger',
+    'Director': {
+      'Name': 'Joe Johnston',
+      'Description': 'An American director most known for Jumanji, Honey, I Shrunk the Kids and Captain America: The First Avenger',
+      'Birth': '1950'
+    },
+    'Genre': {
+      'Name' :'Action',
+      'Description': 'An action packed adventure you need!'
+    },
+    'Imgurl': 'captainamerica.png',
+    'Featured': true
   },
   {
-    MovieID: '5',
-    Title: 'Captain America: The First Avenger',
-    Description: '',
-    Genre: 'Action',
-    Genreid: '2',
-    Director: 'Joe Johnston',
-    Directorid: '5',
-    Imgurl: '',
-    Featured: '',
+    'Title': 'Harry Potter And The Goblet Of Fire',
+    'Description': 'Harry Potter finds himself competing against rival wizarding schools in one of the most dangerous competitions',
+    'Genre': {
+      'Name': 'Fantasy',
+      'Description': 'A sequence of improbable things!'
+    },
+    'Director': {
+      'Name': 'Mike Newell',
+      'Bio': 'An English film/tv director and producer who won the BAFTA for Best Direction for Four Weddings and a Funeral in 1994',
+      'Birth': '1942'
+    },
+    'Imgurl': 'harrypottergobletoffire.png',
+    'Featured': true
   },
   {
-    MovieID: '6',
-    Title: 'Harry Potter And The Goblet Of Fire',
-    Description: '',
-    Genre: 'Fantasy',
-    Genreid: '6',
-    Director: 'Mike Newell',
-    Directorid: '6',
-    Imgurl: '',
-    Featured: '',
+    'Title': 'Harry Potter And The Deathly Hollows Part 1',
+    'Description': 'As Harry, Ron and Hermione raze against time and evil to destroy the Horcruxes, they uncover the existence of the Deathly Hollows',
+    'Director': {
+      'Name': 'David Yates',
+      'Bio': 'An English director, producer and writer most known for directing the later four Harry Potter movies as well as the first three Fantastic Beasts',
+      'Birth': '1963'
+    },
+    'Genre': {
+      'Name': 'Adventure',
+      'Description': 'A journey awaits all who seek it!'
+    },
+    'Imgurl': 'harrypotterdeathlyhollowspart1',
+    'Featured': false
   },
   {
-    MovieID: '7',
-    Title: 'Harry Potter And The Deathly Hollows Part 1',
-    Description: '',
-    Genre: 'Adventure',
-    Genreid: '3',
-    Director: 'David Yates',
-    Directorid: '7',
-    Imgurl: '',
-    Featured: '',
+    'Title': 'Harry Potter And The Deathly Hollows Part 2',
+    'Description': 'Harry, Ron and Hermione search for the remaining Horcruxes in their effort to destroy the Dark Lord in their final battle at Hogwarts',
+    'Director': {
+      'Name': 'David Yates',
+      'Bio': 'An English director, producer and writer most known for directing the later four Harry Potter movies as well as the first three Fantastic Beasts',
+      'Birth': '1963'
+    },
+    'Genre': {
+      'Name': 'Drama',
+      'Description': 'An exciting, emotional or unexpected series of events!'
+    },
+    'Imgurl': 'harrypotterdeathlyhollowspart2',
+    'Featured': true
   },
   {
-    MovieID: '8',
-    Title: 'Harry Potter And The Deathly Hollows Part 2',
-    Description: '',
-    Genre: 'Drama',
-    Genreid: '8',
-    Director: 'David Yates',
-    Directorid: '7',
-    Imgurl: '',
-    Featured: '',
+    'Title': 'The Maze Runner',
+    'Dscription': '',
+    'Director': {
+      'Name': 'Wes Ball',
+      'Bio': '',
+      'Birth': '1980'
+    },
+    'Genre': {
+      'Name': 'Sci-Fi',
+      'Description': 'A movie for those seeking the world past the horizon!'
+    },
+    'Imgurl': 'mazerunner.png',
+    'Featured': true
   },
   {
-    MovieID: '9',
-    Title: 'The Maze Runner',
-    Dscription: '',
-    Genre: 'Sci-Fi',
-    Genreid: '4',
-    Director: 'Wes Ball',
-    Directorid: '8',
-    Imgurl: '',
-    Featured: '',
-  },
-  {
-    MovieID: '10',
-    Title: 'Maze Runner: The Death Cure',
-    Description: '',
-    Genre: 'Sci-Fi',
-    Genreid: '4',
-    Director: 'Wes Ball',
-    Directorid: '8',
-    Imgurl: '',
-    Featured: '',
-  },
-];
-
-let director = [
-  {
-    directorid: '1',
-    name:'Seth Kearlsy',
-    bio: '',
-    birthyear: '1971',
-    deathyear: 'N/A',
-  },
-  {
-    directorid: '2',
-    name:'Kenneth Branagh',
-    bio: '',
-    birthyear: '1960',
-    deathyear: 'N/A',
-  },
-  {
-    directorid: '3',
-    name:'Sam Raimi',
-    bio: '',
-    birthyear: '1959',
-    deathyear: 'N/A',
-  },
-  {
-    directorid: '4',
-    name:'Jon Favreau',
-    bio: '',
-    birthyear: '1966',
-    deathyear: 'N/A',
-  },
-  {
-    directorid: '5',
-    name:'Joe Johnston',
-    bio: '',
-    birthyear: '1950',
-    deathyear: 'N/A',
-  },
-  {
-    directorid: '6',
-    name:'Mike Newell',
-    bio: '',
-    birthyear: '1942',
-    deathyear: '',
-  },
-  {
-    directorid: '7',
-    name:'David Yates',
-    bio: '',
-    birthyear: '1963',
-    deathyear: 'N/A',
-  },
-  {
-    directorid: '8',
-    name:'Wes Ball',
-    bio: '',
-    birthyear: '1980',
-    deathyear: 'N/A',
-  },
-];
-
-let genres = [
-  {
-    genreid: '1',
-    name: 'Comedy',
-    description: 'A movie to make you laugh!',
-  },
-  {
-    genreid: '2',
-    name: 'Action',
-    description: 'An action packed adventure you need!',
-  },
-  {
-    genreid: '3',
-    name: 'Adventure',
-    description: 'A journey awaits all who seek it!',
-  },
-  {
-    genreid: '4',
-    name: 'Sci-Fi',
-    description: 'A movie for those seeking the world past the horizon!',
-  },
-  {
-    genreid: '5',
-    name: 'Drama',
-    description: 'An exciting, emotional or unexpected series of events!',
-  },
-  {
-    genreid: '6',
-    name: 'Fantasy',
-    description: 'A sequence of improbable things!',
+    'Title': 'Maze Runner: The Death Cure',
+    'Description': '',
+    'Director': {
+      'Name': 'Wes Ball',
+      'Bio': '',
+      'Birth': '1980'
+    },
+    'Genre': {
+      'Name': 'Sci-Fi',
+      'Description': 'A movie for those seeking the world past the horizon!'
+    },
+    'Imgurl': 'mazerunnerdeathcure.png',
+    'Featured': false
   },
 ];
 
