@@ -395,20 +395,19 @@ app.post('/movies/:UserID/:MovieID', (req, res) => {
 });
 
 //Remove favorited movies
-app.delete('/movies/:UserID/:MovieID', (req, res) => {
-  Movies.findOneAndRemove({ Movies: req.params.movies })
-    .then((movie) => {
-      if(!movies) {
-        res.status(400).send(req.params.Movie + ' was not found');
-      } else {
-        res.status(200).send(req.params.Movie + ' was deleted');
-      }
-    })
-    .catch((err) => {
-      console.log(err);
-      res.status(500).send('Error: ' + err);
-    });
+app.delete('/movies/:Username/movies/:MovieID', (req, res) => {
+  Movies.findOneAndUpdate({ Movie: req.params.movie }, {
+    $pull: { FavoriteMovies: req.params.MovieID }
+  },
+    { new: true }, //Makes sure that the updated document is returned
+    (err, updatedMovie) => {
+    if(err) {
+      res.status(400).send(req.params.Movie + ' was not found');
+    } else {
+      res.status(200).send(req.params.Movie + ' was removed');
+    }
   });
+});
 
 //Default webpage
 app.get('/', (req, res) => {
