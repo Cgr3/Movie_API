@@ -30,9 +30,9 @@ let movies = [
       'Name': 'Comedy',
       'Description': 'A movie to make you laugh!'
     },
-      'Imgurl': 'eightcrazynights.png',
-      'Featured': true
-    },
+    'Imgurl': 'eightcrazynights.png',
+    'Featured': true
+  },
   {
     'Title': 'Thor',
     'Description': 'The powerful god Thor is stripped of his title and powers and sent to Earth',
@@ -201,17 +201,14 @@ let users_movies = [
   {
     usermovieid: '1',
     userid: '1',
-    movieid: '1',
   },
   {
     usermovieid: '2',
     userid: '1',
-    movieid: '2',
   },
   {
     usermovieid: '3',
-    userid: '3',
-    movieid: '2',
+    userid: '3'
   },
 ];
 
@@ -256,19 +253,19 @@ app.get('movies/genre/:genreName', (req, res) => {
   } else {
     res.status(400).send('No genre found')
   }
-});
+})
 
 //Get director by name
-app.get('movies/director/:directorName', (req, res) => {
+app.get('movies/directors/:directorName', (req, res) => {
   const { directorName } = req.params;
-  const directorData = movie.find(movie => movie.Director.Name.toLowerCase() === directorName.toLowerCase()).Director;
+  const director = movies.find(movie => movie.Director.Name === directorName).Director;
 
-  if (directorData) {
-    res.status(200).json(directorData);
+  if (director) {
+    res.status(200).json(director);
   } else {
-    res.status(400).send('No director found');
+    res.status(400).send('No director found')
   }
-});
+})
 
 //Get a list of users
 app.get('/users', (req, res) => {
