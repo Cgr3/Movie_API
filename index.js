@@ -14,6 +14,8 @@ const express = require('express'),
   uuid = require('uuid');
 
 const app = express();
+app.use(morgan('common'));
+
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }))
 
@@ -211,9 +213,6 @@ let users_movies = [
     userid: '3'
   },
 ];
-
-const accessLogStream = fs.createWriteStream(path.join(__dirname, 'log.txt'), {flags: 'a'})
-app.use(morgan('combined', {stream: accessLogStream}));
 
 app.get('/topmovies', (req, res) => {
   res.status(200).json(topMovies);
