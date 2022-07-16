@@ -232,7 +232,7 @@ app.get('/movies', passport.authenticate('jwt', { session: false }), (req, res) 
 });
 
 //Find movie by name
-app.get('/movies/:Title', (req, res) => {
+app.get('/movies/:Title', passport.authenticate('jwt', { session: false }), (req, res) => {
   Movies.findOne({ Title: req.params.Title })
   .then((movie) => {
     res.json(movie);
@@ -244,7 +244,7 @@ app.get('/movies/:Title', (req, res) => {
 });
 
 //Get Genre by name
-app.get('/movies/genre/:Name', (req, res) => {
+app.get('/movies/genre/:Name', passport.authenticate('jwt', { session: false }), (req, res) => {
   Movies.find({ 'Genre.Name': req.params.Name })
   .then((genre) => {
     res.status(201).json(genre);
@@ -256,7 +256,7 @@ app.get('/movies/genre/:Name', (req, res) => {
 });
 
 //Get director by name
-app.get('/movies/director/:Name', (req, res) => {
+app.get('/movies/director/:Name', passport.authenticate('jwt', { session: false }), (req, res) => {
   Movies.findOne({ 'Director.Name': req.params.Name })
   .then((director) => {
     res.status(201).json(director);
@@ -268,7 +268,7 @@ app.get('/movies/director/:Name', (req, res) => {
 });
 
 //Get a list of users
-app.get('/users', (req, res) => {
+app.get('/users', passport.authenticate('jwt', { session: false }), (req, res) => {
   Users.find()
   .then((users) => {
     res.status(201).json(users);
@@ -280,7 +280,7 @@ app.get('/users', (req, res) => {
 });
 
 //Get a user by username
-app.get('/users/:Username', (req, res) => {
+app.get('/users/:Username', passport.authenticate('jwt', { session: false }), (req, res) => {
   Users.findOne({ Username: req.params.Username })
   .then((user) => {
     res.json(user);
@@ -299,7 +299,7 @@ Password: String,
 Email: String,
 Birthday: Date
 } */
-app.post('/users', (req, res) => {
+app.post('/users', passport.authenticate('jwt', { session: false }), (req, res) => {
   Users.findOne({ Username: req.body.Username })
   .then((user) => {
     if (user) {
@@ -337,7 +337,7 @@ app.post('/users', (req, res) => {
   Birthday: Date
 }
 */
-app.put('/users/:Username', (req, res) => {
+app.put('/users/:Username', passport.authenticate('jwt', { session: false }), (req, res) => {
   Users.findOneAndUpdate({ Username: req.params.Username }, { $set:
     {
       Username: req.body.Username,
@@ -358,7 +358,7 @@ app.put('/users/:Username', (req, res) => {
 });
 
 //Delete a user
-app.delete('/users/:Username', (req, res) => {
+app.delete('/users/:Username', passport.authenticate('jwt', { session: false }), (req, res) => {
   Users.findOneAndRemove({ Username: req.params.Username })
   .then((user) => {
     if(!user) {
@@ -374,12 +374,12 @@ app.delete('/users/:Username', (req, res) => {
 });
 
 //Get list of favorited movies
-app.get('/users_movies', (req, res) => {
+app.get('/users_movies', passport.authenticate('jwt', { session: false }), (req, res) => {
   res.status(200).json(users_movies);
 });
 
 //Add a movie to user's list of favorites
-app.post('/movies/:UserID/:MovieID', (req, res) => {
+app.post('/movies/:UserID/:MovieID', passport.authenticate('jwt', { session: false }), (req, res) => {
   Users.findOneAndUpdate({ Username: req.params.Username }, {
     $push: { FavoriteMovies: req.params.MovieID }
   },
@@ -395,7 +395,7 @@ app.post('/movies/:UserID/:MovieID', (req, res) => {
 });
 
 //Remove favorited movies
-app.delete('/movies/:Username/movies/:MovieID', (req, res) => {
+app.delete('/movies/:Username/movies/:MovieID', passport.authenticate('jwt', { session: false }), (req, res) => {
   Users.findOneAndUpdate({ Username: req.params.Username }, {
     $pull: { FavoriteMovies: req.params.MovieID },
   },
@@ -411,12 +411,12 @@ app.delete('/movies/:Username/movies/:MovieID', (req, res) => {
 });
 
 //Default webpage
-app.get('/', (req, res) => {
+app.get('/', passport.authenticate('jwt', { session: false }), (req, res) => {
   res.status(200).send('Welcome To My MoviesFlix Page!');
 });
 
 //Open documentation page
-app.get('/documentation', (req, res) => {
+app.get('/documentation', passport.authenticate('jwt', { session: false }), (req, res) => {
   res.status(200).sendFile('public/documentation.html', { root: __dirname });
 });
 
