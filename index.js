@@ -19,6 +19,11 @@ app.use(morgan('common'));
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }))
 
+let auth = require('./auth')(app);
+
+const passport = require('passport');
+require('./passport');
+
 let movies = [
   {
     'Title': 'Eight Crazy Nights',
@@ -214,12 +219,8 @@ let users_movies = [
   },
 ];
 
-app.get('/topmovies', (req, res) => {
-  res.status(200).json(topMovies);
-});
-
 //Pull list of all movies
-app.get('/movies', (req, res) => {
+app.get('/movies', passport.authenticate('jwt', { session: false }), (req, res) => {
   Movies.find()
   .then((movies) => {
     res.status(201).json(movies);
