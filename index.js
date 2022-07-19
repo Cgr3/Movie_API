@@ -204,21 +204,6 @@ let users = [
   },
 ];
 
-let users_movies = [
-  {
-    usermovieid: '1',
-    userid: '1',
-  },
-  {
-    usermovieid: '2',
-    userid: '1',
-  },
-  {
-    usermovieid: '3',
-    userid: '3'
-  },
-];
-
 //Pull list of all movies
 app.get('/movies', passport.authenticate('jwt', { session: false }), (req, res) => {
   Movies.find()
@@ -371,11 +356,6 @@ app.delete('/users/:Username', passport.authenticate('jwt', { session: false }),
     console.log(err);
     res.status(500).send('Error: ' + err);
   });
-});
-
-//Get list of favorited movies
-app.get('/users_movies', passport.authenticate('jwt', { session: false }), (req, res) => {
-  res.status(200).json(users_movies);
 });
 
 //Add a movie to user's list of favorites
