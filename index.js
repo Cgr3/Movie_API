@@ -348,11 +348,31 @@ app.post('/users',
   Birthday: Date
 }
 */
-app.put('/users/:Username', passport.authenticate('jwt', { session: false }), (req, res) => {
+app.put('/users/:Username', passport.authenticate('jwt', { session: false }),
+//Validation logic first
+[
+//Check validation on Uesrname
+check('Username', 'Username is required').isLength({ min: 5 }),
+check('Username', 'Username contains non alphanumeric character - not allowed.').isAlphanumeric(),
+//Check validation on Password
+check('Password', 'Password is required').not().isEmpty(),
+//Check validation on Email
+check('Email', 'Email does not appear to be valid').isEmail()
+], (req, res) => {
+//Check validation object for errors
+let errors = validationResult(req);
+
+if(!errors.isEmpty()) {
+  return res.status(422).json({ errors: errors.array() });
+}
+
+//Hash passwords
+let hashedPassword = Users.hashPassword(req.body.Password);
+
   Users.findOneAndUpdate({ Username: req.params.Username }, { $set:
     {
       Username: req.body.Username,
-      Password: req.body.Password,
+      Password: hashedPassword,
       Email: req.body.Email,
       Birthday: req.body.Birthday
     }
