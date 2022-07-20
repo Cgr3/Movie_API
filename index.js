@@ -441,7 +441,7 @@ app.delete('/movies/:Username/movies/:MovieID', passport.authenticate('jwt', { s
 });
 
 //Default webpage
-app.get('/', passport.authenticate('jwt', { session: false }), (req, res) => {
+app.get('/', (req, res) => {
   res.status(200).send('Welcome To My MoviesFlix Page!');
 });
 
