@@ -12,8 +12,6 @@ mongoose.connect( process.env.CONNECTION_URI, { useNewUrlParser: true, useUnifie
 
 const express = require('express'),
   morgan = require('morgan'),
-  fs = require('fs'),
-  path = require('path'),
   bodyParser = require('body-parser');
   uuid = require('uuid');
 
@@ -26,45 +24,18 @@ app.use(bodyParser.urlencoded({ extended: true }))
 const cors = require('cors');
 app.use(cors());
 
-let auth = require('./auth')(app);
+require('./auth')(app);
 
 const passport = require('passport');
 require('./passport');
 
 const { check, validationResult } = require('express-validator');
 
-let users = [
-  {
-    Userid: '1',
-    Username: 'CGR',
-    Password: 'test123',
-    Email: '123email@email.com',
-    Birthday: '01/04/2001',
-    FavoriteMovies: ['Thor', 'Iron Man', 'The Maze Runner'],
-  },
-  {
-    Userid: '2',
-    Username: 'Riah121',
-    Password: 'password123',
-    Email: 'exampleemail@email.com',
-    Birthday: '01/17/2000',
-    FavoriteMovies: ['The Maze Runner', 'Thor', 'Harry Potter and the Goblet of Fire'],
-  },
-  {
-    Userid: '3',
-    Username: 'jaz',
-    Password: '123pass',
-    Email: 'emailexample@email.com',
-    Birthday: '06/05/2005',
-    FavoriteMovies: ['Iron Man', 'Harry Potter and the Deathly Hollows Part 2', 'Spider Man'],
-  },
-];
-
 //Pull list of all movies
 app.get('/movies', passport.authenticate('jwt', { session: false }), (req, res) => {
   Movies.find()
   .then((movies) => {
-    res.status(201).json(movies);
+    res.status(200).json(movies);
   })
   .catch((err) => {
     console.log(err);
@@ -88,7 +59,7 @@ app.get('/movies/:Title', passport.authenticate('jwt', { session: false }), (req
 app.get('/movies/genre/:Name', passport.authenticate('jwt', { session: false }), (req, res) => {
   Movies.find({ 'Genre.Name': req.params.Name })
   .then((genre) => {
-    res.status(201).json(genre);
+    res.json(genre);
   })
   .catch((err) => {
     console.log(err);
@@ -100,7 +71,7 @@ app.get('/movies/genre/:Name', passport.authenticate('jwt', { session: false }),
 app.get('/movies/director/:Name', passport.authenticate('jwt', { session: false }), (req, res) => {
   Movies.findOne({ 'Director.Name': req.params.Name })
   .then((director) => {
-    res.status(201).json(director);
+    res.json(director);
   })
   .catch((err) => {
     console.log(err);
@@ -112,7 +83,7 @@ app.get('/movies/director/:Name', passport.authenticate('jwt', { session: false 
 app.get('/users', passport.authenticate('jwt', { session: false }), (req, res) => {
   Users.find()
   .then((users) => {
-    res.status(201).json(users);
+    res.json(users);
   })
   .catch((err) => {
     console.log(err);
