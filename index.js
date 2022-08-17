@@ -32,7 +32,7 @@ require('./passport');
 const { check, validationResult } = require('express-validator');
 
 //Pull list of all movies
-app.get('/movies', passport.authenticate('jwt', { session: false }), function (req, res) {
+app.get('/movies', function (req, res) {
   Movies.find()
   .then((movies) => {
     res.status(200).json(movies);
